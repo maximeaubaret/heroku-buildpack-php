@@ -376,10 +376,13 @@ EOF
 fi
 
 # Install PostreSQL Client
-mkdir -p $BUILD_DIR/postgres
+mkdir -p $BUILD_DIR/postgres/extract
 pushd $BUILD_DIR/postgres
 apt-get download postgresql-client-9.3
-dpkg -x postgres* .
+dpkg -x postgres* extract
+
+mkdir -p /app/.heroku/pgclient
+mv extract /app/.heroku/pgclient
 popd
 
 install_newrelic_daemon
