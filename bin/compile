@@ -376,10 +376,9 @@ EOF
 fi
 
 # Install PostreSQL Client
-# mkdir -p $BUILD_DIR/postgres
-# cd $BUILD_DIR/postgres
-# apt-get download postgresql-client-9.3
-# dpkg -x postgres* $BUILD_DIR/postgres
+mkdir -p $BUILD_DIR/postgres
+apt-get download postgresql-client-9.3
+dpkg -x postgres* $BUILD_DIR/postgres
 
 install_newrelic_daemon
 install_newrelic_userini
