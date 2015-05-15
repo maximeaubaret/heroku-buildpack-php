@@ -375,7 +375,12 @@ export -f composer
 EOF
 fi
 
-sudo apt-get install postgresql-client-9.3
+# Install PostreSQL Client
+mkdir -p $BUILD_DIR/postgres
+cd $BUILD_DIR/postgres
+apt-get download postgresql-client-9.3
+dpkg -x postgres .
+
 
 install_newrelic_daemon
 install_newrelic_userini
