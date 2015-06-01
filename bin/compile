@@ -379,7 +379,7 @@ fi
 mkdir -p $BUILD_DIR/postgres
 mkdir -p /app/.heroku/pgclient
 pushd $BUILD_DIR/postgres
-apt-get download postgresql-client-9.3
+wget http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.3/postgresql-client-9.3_9.3.4-1_amd64.deb
 dpkg -x postgres* /app/.heroku/pgclient
 
 cat > $BUILD_DIR/.profile.d/pgclient.sh <<"EOF"
